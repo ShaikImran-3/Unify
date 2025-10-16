@@ -7,7 +7,7 @@ trigger:
 - main  # branch to trigger pipeline
  
 pool:
-  name: 'Default'  # or your self-hosted agent with Tosca installed
+  name: 'Azure Pipelines'  # or your self-hosted agent with Tosca installed
  
 steps:
 - task: PowerShell@2
