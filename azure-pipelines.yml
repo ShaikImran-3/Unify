@@ -19,7 +19,7 @@ steps:
       $ToscaCmdPath = "C:\Program Files (x86)\TRICENTIS\Tosca Testsuite\ToscaCommander\ToscaCommander.exe"
       
       # ExecutionList and Workspace
-      $ExecutionList = "C:\Users\SESA817735\Documents\Tosca\Script.tcs.txt"
+      $ExecutionList = "C:\Users\SESA817735\Documents\Tosca\Script.tcs"
       $Workspace = "C:\Tosca_Projects\Tosca_Workspaces\UNIFY_TestAutomation\UNIFY_TestAutomation.tws"
       
       # Result folder
