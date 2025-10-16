@@ -4,16 +4,32 @@
 # https://aka.ms/yaml
 
 trigger:
-- main
-
+- main  # branch to trigger pipeline
+ 
 pool:
-  vmImage: ubuntu-latest
-
+  name: 'Default'  # or your self-hosted agent with Tosca installed
+ 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- task: PowerShell@2
+  displayName: 'Run Tosca Tests'
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Path to Tosca CommandLine executable
+      $ToscaCmdPath = "C:\Program Files (x86)\TRICENTIS\Tosca Testsuite\ToscaCommander\ToscaCommander.exe"
+      
+      # ExecutionList and Workspace
+      $ExecutionList = "C:\Users\SESA817735\Documents\Tosca\Script.tcs.txt"
+      $Workspace = "C:\Tosca_Projects\Tosca_Workspaces\UNIFY_TestAutomation\UNIFY_TestAutomation.tws"
+      
+      # Result folder
+      $ResultFolder = "C:\ToscaResults"
+      
+      # Run Tosca
+      & $ToscaCmdPath /ExecutionList=$ExecutionList /ProjectPath=$Workspace /ResultFolder=$ResultFolder /LoginUser="username" /Password="password"
+      
+      # Check results
+      if($LASTEXITCODE -ne 0) {
+          Write-Error "Tosca Tests failed. Check results in $ResultFolder"
+          exit 1
+      }
