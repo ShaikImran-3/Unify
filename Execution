@@ -11,11 +11,11 @@ steps:
     targetType: 'inline'
     script: |
       # Path to Tosca CommandLine executable
-      $ToscaCmdPath = "C:\Tosca\ToscaCommanderCMD.exe"
+      $ToscaCmdPath = "C:\Program Files (x86)\TRICENTIS\Tosca Testsuite\ToscaCommander\ToscaCommander.exe"
       
       # ExecutionList and Workspace
-      $ExecutionList = "C:\ToscaWorkspace\ExecutionLists\MyExecutionList.xml"
-      $Workspace = "C:\ToscaWorkspace\MyWorkspace.twsx"
+      $ExecutionList = "C:\Users\SESA817735\Documents\Tosca\Script.tcs"
+      $Workspace = "C:\Tosca_Projects\Tosca_Workspaces\UNIFY_TestAutomation\UNIFY_TestAutomation.tws"
       
       # Result folder
       $ResultFolder = "C:\ToscaResults"
