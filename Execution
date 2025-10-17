@@ -21,7 +21,7 @@ steps:
       $ResultFolder = "C:\ToscaResults"
       
       # Run Tosca
-      & $ToscaCmdPath /ExecutionList=$ExecutionList /ProjectPath=$Workspace /ResultFolder=$ResultFolder /LoginUser="username" /Password="password"
+      & $ToscaCmdPath /ExecutionList=$ExecutionList /ProjectPath=$Workspace /ResultFolder=$ResultFolder /LoginUser="Imran" /Password="Imran"
       
       # Check results
       if($LASTEXITCODE -ne 0) {
